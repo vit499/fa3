@@ -1,0 +1,64 @@
+{
+  "id": 2047,
+  "name": "1001",
+  "param": "flat 1",
+  "status": "41",
+  "rooms": [
+    {
+      "id": 1,
+      "param": "room 1",
+      "status": "45",
+      "dots": [
+        {
+          "id": 1,
+          "param": "dot 1",
+          "status": "31"
+        },
+        {
+          "id": 2,
+          "param": "dot 2",
+          "status": "good"
+        },
+        {
+          "id": 3,
+          "param": "dot 3",
+          "status": "24"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "param": "room 2",
+      "status": "16",
+      "dots": [
+        {
+          "id": 4,
+          "param": "dot 1",
+          "status": "7"
+        },
+        {
+          "id": 5,
+          "param": "dot 2",
+          "status": "8"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "param": "room 3",
+      "status": "4",
+      "dot": [
+        {
+          "id": 6,
+          "param": "dot 1",
+          "status": "-3"
+        },
+        {
+          "id": 7,
+          "param": "dot 2",
+          "status": "7"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+
+@host = localhost:8002
+@hostdev = localhost:8002
+@authToken = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEyOCwiZXhwIjoxNjcyNjk2MDMyfQ.6cwMuqbrdE-LS4BlwTGopdH83CBPlxOZgobjANNLE-0
+@tokendev = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImV4cCI6MTY3MzE2NDA4MH0.Sb1EoPLKyn65GrDwAjm3ci07kEgDkFx_39r9fvxi5k0
+
+###
+GET http://{{host}}/api/flats HTTP/1.1
+
+###
+GET http://{{host}}/api/flats/0001 HTTP/1.1
+
+###
+GET http://{{host}}/api/flats/0001/r HTTP/1.1
+
+###
+POST http://{{host}}/api/flats/0001 HTTP/1.1
+
+###
+POST http://{{host}}/api/flats HTTP/1.1
+content-type: application/json
+
+{
+    "name": "0001",
+    "param": "f1",
+    "status": "31"
+}
+###
+POST http://{{host}}/api/flats HTTP/1.1
+content-type: application/json
+
+{
+    "name": "0001",
+    "param": "flat0001",
+    "status": "44"
+}
+
+###
+
+POST http://{{host}}/api/flats/0001/rooms HTTP/1.1
+content-type: application/json
+
+{
+    "param": "room 1 of 0001",
+    "status": "21"
+}
+
+###
+POST http://{{host}}/api/flats/0001/rooms HTTP/1.1
+content-type: application/json
+
+{
+    "param": "room 2 of 0001",
+    "status": "-5"
+}
+
+###
+POST http://{{host}}/api/flats/0002/rooms HTTP/1.1
+content-type: application/json
+
+{
+    "param": "room 1 of 0002",
+    "status": "12"
+}
+
+###
+POST http://{{host}}/api/flats/0002/rooms HTTP/1.1
+content-type: application/json
+
+{
+    "param": "room 2 of 0002",
+    "status": "11"
+}
+
+###
+POST http://{{host}}/api/flats/0002/xx HTTP/1.1
+content-type: application/json
+
+{
+    "src": "flat=02&room=21451632&dot=45434534534534"
+}
+
+###
+POST http://{{host}}/api/flats/0002/xx HTTP/1.1
+content-type: application/json
+
+{
+    "src": "flat=02&room=011521451632ABCD&dot=12"
+}
+
+###
+GET http://{{host}}/api/rooms HTTP/1.1
+
+###
+GET http://{{host}}/api/rooms HTTP/1.1
+
+###
+DELETE http://{{host}}/api/flats HTTP/1.1

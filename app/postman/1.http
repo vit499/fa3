@@ -1,0 +1,40 @@
+
+@host = localhost:8002
+@hostdev = localhost:8002
+@authToken = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEyOCwiZXhwIjoxNjcyNjk2MDMyfQ.6cwMuqbrdE-LS4BlwTGopdH83CBPlxOZgobjANNLE-0
+@tokendev = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImV4cCI6MTY3MzE2NDA4MH0.Sb1EoPLKyn65GrDwAjm3ci07kEgDkFx_39r9fvxi5k0
+
+###
+GET http://{{host}}/api/users HTTP/1.1
+
+###
+GET http://{{host}}/api/users/1 HTTP/1.1
+
+###
+POST http://{{host}}/api/users HTTP/1.1
+content-type: application/json
+
+{
+    "email": "a2@b.ru",
+    "password": "1111"
+}
+
+###
+
+POST http://{{host}}/api/users/2/items HTTP/1.1
+content-type: application/json
+
+{
+    "title": "item1 of user2",
+    "description": "descr 2"
+}
+
+###
+GET http://{{host}}/api/items HTTP/1.1
+
+###
+GET http://{{host}}/api/items HTTP/1.1
+Authorization: Bearer {{tokendev}}
+
+###
+GET http://{{host}}/api/items/delete HTTP/1.1
